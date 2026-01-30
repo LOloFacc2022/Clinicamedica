@@ -1,0 +1,8 @@
+
+{
+  "name": "Clínica Fisiátrica - Gestión Profesional",
+  "description": "Una aplicación profesional para la gestión de pacientes y sesiones kinésicas con integración de inteligencia artificial para análisis clínico.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
