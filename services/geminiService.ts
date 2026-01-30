@@ -3,7 +3,7 @@ import { GoogleGenAI } from "@google/genai";
 import { Patient, Session } from "../types";
 
 export const analyzePatientProgress = async (patient: Patient, sessions: Session[]): Promise<string> => {
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY.env.API_KEY });
   
   const sessionsSummary = sessions
     .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
@@ -45,7 +45,7 @@ export const analyzePatientProgress = async (patient: Patient, sessions: Session
 export const suggestClinicalTerminology = async (text: string): Promise<string[]> => {
   if (!text.trim()) return [];
   
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY.env.API_KEY });
   
   const prompt = `
     Actúa como un experto en Semiología Kinésica y Terminología Médica de alta precisión. 
